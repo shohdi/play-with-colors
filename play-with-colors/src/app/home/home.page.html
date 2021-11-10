@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Play with colours
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Play with colours</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form [formGroup]="form">
+  <div id="container">
+    <ion-list>
+     
+    
+      <ion-item>
+        <ion-range min="0" max="255" color="danger" formControlName='redCont'  (ionChange)='changeColor()' >
+          <ion-label slot="start">red</ion-label>
+          <ion-label slot="end">reflect all</ion-label>
+        </ion-range>
+      </ion-item>
+
+      <ion-item>
+        <ion-range min="0" max="255" color="success" formControlName='greenCont'  (ionChange)='changeColor()'>
+          <ion-label slot="start">green</ion-label>
+          <ion-label slot="end">reflect all</ion-label>
+        </ion-range>
+      </ion-item>
+
+      <ion-item>
+        <ion-range min="0" max="255" color="primary" formControlName='blueCont' (ionChange)='changeColor()' >
+          <ion-label slot="start">blue</ion-label>
+          <ion-label slot="end">reflect all</ion-label>
+        </ion-range>
+      </ion-item>
+
+
+      </ion-list>
+
+     <div style="margin:10px;border:solid black 1px;">
+       <div style="display:block !important;height: 100px !important;" [style.backgroundColor] = 'this.myColor'>
+        
+       </div>
+      </div>
+     
+
+
+  </div>
+</form>
+</ion-content>
